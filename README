@@ -1,0 +1,40 @@
+Scheme for Android
+-------------------
+[Or, more precisely, an adapter for Scripting Layer for Android that allows
+executing the jScheme interpreter (http://jscheme.sf.net)]
+
+INTRODUCTION
+============
+
+What is it?
+-----------
+
+It allows you to run Scheme (a dialect of Lisp) on your Android phone.
+
+What to do to get it?
+---------------------
+
+To get it, you need to do the following:
+
+   - Install the Scripting Layer for Android
+
+   - Install Scheme for Android: either install a pre-made APK or compile
+     and install it from source here.
+
+ACKNOWLEDGMENTS
+===============
+
+   - Scripting layer for Android: http://code.google.com/p/android-scripting
+
+     Scripting layer for Android is the work of many volunteers.
+
+   - jScheme: http://jscheme.sf.net
+     jScheme license here: http://jscheme.sourceforge.net/jscheme/licenses/JScheme.txt, and
+     the following text is per the said license.
+
+     1. jScheme is written by Ken Anderson, Tim Hickey, Peter Norvig et al.
+
+     2. The original jScheme JAR is 'dexed' to be executable on Android.
+
+     3. We're not using the source distribution of jScheme here.
+
