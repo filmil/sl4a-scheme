@@ -1,5 +1,5 @@
 /**
- * Copyright 2011 Google Inc.
+ * Copyright 2011 Filip Miletic
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -15,46 +15,29 @@
  */
 package com.hdlfactory.scheme;
 
-import java.io.File;
-
 import android.content.Context;
 
 import com.googlecode.android_scripting.AsyncTaskListener;
-import com.googlecode.android_scripting.InterpreterInstaller;
-import com.googlecode.android_scripting.Log;
+import com.googlecode.android_scripting.InterpreterUninstaller;
 import com.googlecode.android_scripting.exception.Sl4aException;
-import com.googlecode.android_scripting.interpreter.InterpreterConstants;
 import com.googlecode.android_scripting.interpreter.InterpreterDescriptor;
 
 /**
- * The bare-bones installer for the scheme interpreter.
+ * The uninstaller for the scheme interpreter.
  * <p>
- * Reuses the existing infrastructure provided by the scripting layer,
- * adding code to initialize the cache root directory.
- * <p>
+ * Uses the default bare-bones uninstaller offered by the interpreter.
  *
  * @author filmil@gmail.com (Filip Miletic)
  */
-public class SchemeInstaller extends InterpreterInstaller {
+public class SchemeUninstaller extends InterpreterUninstaller {
 
-  public SchemeInstaller(InterpreterDescriptor descriptor, Context context,
+  public SchemeUninstaller(InterpreterDescriptor descriptor, Context context,
       AsyncTaskListener<Boolean> listener) throws Sl4aException {
     super(descriptor, context, listener);
   }
 
-  // Requires permissions to write to the SD memory card (/sdcard/...)
   @Override
-  protected boolean setup() {
-    Log.i("Now installing");
-    File dalvikCache = new File(mInterpreterRoot + InterpreterConstants.SL4A_DALVIK_CACHE_ROOT);
-    if (!dalvikCache.isDirectory()) {
-      try {
-        dalvikCache.mkdir();
-      } catch (SecurityException ex) {
-        Log.e(mContext, "Could not make vm cache", ex);
-        return false;
-      }
-    }
+  protected boolean cleanup() {
     return true;
   }
 }

@@ -1,0 +1,26 @@
+# -*- python -*-
+#! /usr/bin/python
+#
+# Description:
+#   A scons build script that builds the extras and scripts archives.
+#   For further detail, refer to http://code.google.com/p/sl4a-scheme
+#
+#   Requires scons.
+#
+#   To build: 
+#     scons
+#   (yes, it's that simple)
+#
+#   To clean up: 
+#     scons -c
+#   (yes, it's that simple)
+#
+# Author:
+#   filmil@gmail.com (Filip Miletic) 
+
+release = 1 # Current release of the scripts and extras
+
+env = Environment()
+
+env.Zip('scheme_extras_r' + str(release) + '.zip', ['scheme'])
+env.Zip('scheme_scripts_r' + str(release) + '.zip', ['scripts'])

@@ -1,5 +1,5 @@
 /**
- * Copyright 2011 Google Inc.
+ * Copyright 2011 Filip Miletic
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -49,8 +49,9 @@ import com.googlecode.android_scripting.interpreter.Sl4aHostedInterpreter;
  */
 public class SchemeDescriptor extends Sl4aHostedInterpreter {
 
-  // TODO(filmil): Remove.
-  private static final String MY_INSTALL_URL = "http://hdlfactory.com/files/sl4a/";
+  /** Fetches the extra files from the sl4a-jscheme website. */
+  private static final String MY_INSTALL_URL = "http://sl4a-scheme.googlecode.com/files/";
+
   private static final String JSCHEME_JAR = "jscheme-7.2.jar";
 
   static final String ENV_DATA = "ANDROID_DATA";

@@ -1,8 +1,17 @@
 .classpath
+app/.classpath
 .project
+app/.project
 .settings
+app/.settings
 bin/*
+app/bin/*
 gen/*
+app/gen/*
 *~
 local.properties
+app/local.properties
+*/.sconsign.*
+scm/*.zip
+
 
